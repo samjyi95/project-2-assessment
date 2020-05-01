@@ -1,0 +1,26 @@
+<h1>Wacky Widgets</h1>
+<% if (widgets.length === 0) { %>
+    <h4>No Widgets exists</h4>
+<% } else { %>
+<div>
+    <% widgets.forEach(w => { %>
+        <li>
+            <div>
+                <%= w.description %>
+                <%= w.quantity %>
+            <form method="POST" action="/widget/<%= w.id %>/?_method=DELETE">
+                <button type="submit" >DELETE</button>
+            </form>   
+            </div>
+        </li>
+    <% }) %> 
+</div>  
+<% } %>
+
+<div>
+    <form method="POST" action="/post">
+    <input id="description" type="text" name="description" >
+    <input id="quantity" type="number" name="quantity">
+        <button type="submit" value="add">Add Widget</button>
+    </form>
+</div>
