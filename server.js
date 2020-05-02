@@ -19,7 +19,6 @@ app.get('/', (req, res) => {
         res.render('home', { widgets })
     })
     .catch((err) => {
-        console.log(error)
         res.send(error)
     })
 })
